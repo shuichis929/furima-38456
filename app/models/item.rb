@@ -8,16 +8,17 @@ class Item < ApplicationRecord
   belongs_to :delivery_charge
   belongs_to :prefecture
   belongs_to :days_to_ship
-  
+
   validates :image, presence: true, blob: { content_type: :image }
   validates :item_name, presence: true
   validates :description, presence: true
   validates :price, presence: true
-  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999}, format: { with: /\A[0-9]+\z/ }
+  validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 },
+                    format: { with: /\A[0-9]+\z/ }
 
-  validates :category_id, numericality: { other_than: 1 , message: "can't be blank"} 
-  validates :condition_id, numericality: { other_than: 1 , message: "can't be blank"} 
-  validates :delivery_charge_id, numericality: { other_than: 1 , message: "can't be blank"} 
-  validates :prefecture_id, numericality: { other_than: 1 , message: "can't be blank"} 
-  validates :days_to_ship_id, numericality: { other_than: 1 , message: "can't be blank"} 
+  validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :condition_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :delivery_charge_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :prefecture_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :days_to_ship_id, numericality: { other_than: 1, message: "can't be blank" }
 end
