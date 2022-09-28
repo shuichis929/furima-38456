@@ -21,4 +21,6 @@ class User < ApplicationRecord
   VALID_NAME_KANA_REGEX = /\A[ァ-ヶー－]+\z/
   validates :family_name_kana, format: { with: VALID_NAME_KANA_REGEX }
   validates :first_name_kana, format: { with: VALID_NAME_KANA_REGEX }
+
+  has_many :items
 end
