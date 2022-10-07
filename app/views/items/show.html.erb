@@ -79,6 +79,15 @@
         <span>不適切な商品の通報</span>
       </div>
     </div>
+    <div class="comments-show", id="comments">
+      <h4>＜コメント一覧＞</h4>
+        <% @item.comments.each do |comment| %>
+          <div class="comment">
+            <p class="user-info"><%= comment.user.nickname %>： </p>
+            <p><%= comment.text%></p>
+          </div>
+        <% end %>
+    </div>
   </div>
   <%# /商品の概要 %>
 
