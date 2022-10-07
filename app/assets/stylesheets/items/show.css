@@ -208,4 +208,10 @@
 
 .comments-show{
   margin-top: 40px;
+  width: 700px;
+}
+
+.comment{
+  margin-top: 20px;
+  display: flex;
 }
